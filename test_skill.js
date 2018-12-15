@@ -16,12 +16,12 @@ var handlers = {
 
   //Create speech output. This is what Alexa will speak back when the user says "Ask code academy to say hello"
   'PhraseIntent': function () {
-    var myLanguage = this.event.request.intent.slots.oggetto.value;
-    if (myLanguage == "pane") {
+    var myItem = this.event.request.intent.slots.oggetto.value;
+    if (myItem == "pane") {
         this.response.speak("corretto pane");
     }
     else {
-        this.response.speak("tu credi si " + myLanguage + " ciao ");
+        this.response.speak("tu credi si " + myItem + " ciao ");
     }
     this.emit(':responseReady');
   }
