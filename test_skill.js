@@ -5,15 +5,21 @@ var Alexa = require("alexa-sdk");
 
 // The handlers object tells Alexa how to handle various actions
 var handlers = {
-	"HelloIntent": function () {
-    //Create speech output. This is what Alexa will speak back when the user says "Ask code academy to say hello"
-		this.emit(":tell", "Hello, Codecademy");
-	},
+
 	//Our skill will receive a LaunchRequest when the user invokes the skill with the invocation name, but does not provide any command mapping to an intent. For example, "Open code academy"
 	"LaunchRequest": function () {
     //Create speech output. This is what Alexa will speak back when the user says "Open code academy"
 		this.emit(":tell", "Welcome to Codecademy");
 	}
+	
+		"Phrase": function () {
+    //Create speech output. This is what Alexa will speak back when the user says "Ask code academy to say hello"
+	var myLanguage = this.event.request.intent.slots.oggetto.value
+	
+	this.emit(':responseReady');
+		//this.emit(":tell", "Hello, Codecademy");
+	},
+	
 };
 
 // This is the function that AWS Lambda calls every time Alexa uses your skill.
