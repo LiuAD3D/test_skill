@@ -14,7 +14,7 @@ var handlers = {
 	
 		"Phrase": function () {
     //Create speech output. This is what Alexa will speak back when the user says "Ask code academy to say hello"
-	var myLanguage = this.event.request.intent.slots.oggetto.value
+	var myLanguage = this.event.request.intent.slots.oggetto.value //where 'oggetto' is the suboject of Intent
 	
 	this.emit(':responseReady');
 		//this.emit(":tell", "Hello, Codecademy");
