@@ -10,7 +10,7 @@ var handlers = {
   'LaunchRequest': function() {
   //Create speech output. This is what Alexa will speak back when the user says "Open code academy"
   
-    this.response.speak("ciao").listen("dimmi");
+    this.response.speak("ciao").listen("dimmi pure che cosa hai finito");
     this.emit(':responseReady');
   },
 
